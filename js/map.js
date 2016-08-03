@@ -46,38 +46,21 @@ function geolocationError(positionError) {
 }
 };
 
-// stree view of home street
-// function initPano() {
-//   var panorama = new google.maps.StreetViewPanorama(
-//    document.getElementById('map'), {
-//      pano: 'reception',
-//      visible: true,
-//      panoProvider: getCustomPanorama
-//  });
-// }
-//
-// function getCustomPanoramaTileUrl(pano, zoom, tileX, tileY) {
-//  return 'https://developers.google.com/maps/documentation/javascript/examples/full/images/panoReception1024-0.jpg';
-// }
-//
-// function getCustomPanorama(pano, zoom, tileX, tileY) {
-//  if (pano === 'reception') {
-//    return {
-//      location: {
-//        pano: 'reception',
-//        description: 'Google Sydney - Reception'
-//      },
-//      links: [],
-//      copyright: 'Imagery (c) 2010 Google',
-//      tiles: {
-//        tileSize: new google.maps.Size(1024, 512),
-//        worldSize: new google.maps.Size(1024, 512),
-//        centerHeading: 105,
-//        getTileUrl: getCustomPanoramaTileUrl
-//      }
-//    };
-//  }
-// }
-
+CustomMap.prototype.locateSindi = function() {
+  var sindi = {lat: 58.404021, lng: 24.651696};
+  var map = new google.maps.Map(document.getElementById('sindi'), {
+    center: sindi,
+    zoom: 14
+  });
+  var panorama = new google.maps.StreetViewPanorama(
+      document.getElementById('sindi-pano'), {
+        position: sindi,
+        pov: {
+          heading: 34,
+          pitch: 10
+        }
+      });
+  map.setStreetView(panorama);
+};
 
 exports.mapModule = CustomMap;
