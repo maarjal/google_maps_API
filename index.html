@@ -6,54 +6,72 @@
     <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-    <script src="http://maps.google.com/maps/api/js?"></script>
+    <!-- <script src="http://maps.google.com/maps/api/js?"></script> -->
     <link rel="stylesheet" href="build/css/styles.css">
     <title>Where's Maarja></title>
   </head>
   <body>
     <div class="container">
-
-      <h1>Where's Maarja</h1>
-
-      <div class="page">
-        <button id="maarjaNow" class="btn btn-success">Where's Maarja Now?</button>
-        <div class="maarjaNow">
-          <p>Maarja is studying JavaScript at Epicodus in Portland, Oregon. Can you find the Epicodus building?</p>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <h1>Where's Maarja</h1>
+        <hr>
+        <a href="search.html">Search</a>
+        <div class="page">
+          <button id="maarjaNow" class="btn btn-success">Where's Maarja Now?</button>
+          <div class="maarjaNow">
+            <p>Maarja is studying JavaScript at Epicodus in Portland, Oregon. Can you find the Epicodus building?</p>
+          </div>
+         <div id="epicodus">
+         </div>
         </div>
-       <div id="epicodus">
-       </div>
+        <hr>
+        <div class="page">
+          <button id="maarjaFrom" class="btn btn-success">Where is Maarja From?</button>
+          <div class="maarjaFrom">
+            <p>Maarja is from Estonia, a country far far away. Can you find "Parnu?", where Maarja was born?</p>
+          </div>
+          <div id="estonia">
+          </div>
+        </div>
+        <hr>
+        <div class="page">
+          <button id="maarjaSindi" class="btn btn-success">Where is Maarja's childhood home?</button>
+          <div class="maarjaSindi">
+            <p>Maarja grew up in a retirement community next to a drug store. Can you find Maarja dragging a pram down an alleyway?</p>
+          </div>
+          <div id="sindi-pano"></div>
+        </div>
+        <hr>
+        <!-- <div class="page">
+          <form class="bridge">
+            <label for="maarjaBridge">Can you find the Brooklyn Bridge in Portland?</label>
+            <input id="maarjaBridge" type="text">
+            <button id="maarjaBridge" class="btn btn-success" type="submit">Find Brooklyn Bridge</button>
+          </form>
+          <div class="maarjaBridge">
+            <p>Maarja left Estonia, a country far far away. Can you find ...?</p>
+          </div>
+          <div id="bridge">
+          </div>
+        </div> -->
+
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map1"></div>
+        <hr>
+        <div class="page">
+          <button id="maarjaPortland" class="btn btn-success">How did Maarja get from Estonia to Portland?</button>
+          <div class="maarjaPortland">
+            <p>Maarja left Estonia, a country far far away. Can you find ...?</p>
+          </div>
+          <div id="portland">
+          </div>
+        </div>
+        <hr>
+        </div>
       </div>
-
-      <div class="page">
-        <button id="maarjaFrom" class="btn btn-success">Where is Maarja From?</button>
-        <div class="maarjaFrom">
-          <p>Maarja is from Estonia, a country far far away. Can you find "Parnu?", where Maarja was born?</p>
-        </div>
-        <div id="estonia">
-        </div>
-      </div>
-
-      <div class="page">
-        <button id="maarjaSindi" class="btn btn-success">Where is Maarja's childhood home?</button>
-        <div class="maarjaSindi">
-          <p>Can you see the apartment, where Maarja grew up?</p>
-        </div>
-        <div id="sindi"></div>
-        <div id="sindi-pano"></div>
-      </div>
-
-      <div class="page">
-        <button id="maarjaPortland" class="btn btn-success">How did Maarja get from Estonia to Portland?</button>
-        <div class="maarjaPortland">
-          <p>Maarja left Estonia, a country far far away. Can you find ...?</p>
-        </div>
-        <div id="portland">
-        </div>
-      </div>
-
     </div>
-    <!-- <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZLgOFfUqwEE5FxLE0LTQDfE3oAAK7SFo&callback=initPano">
-    </script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZLgOFfUqwEE5FxLE0LTQDfE3oAAK7SFo&libraries=places&callback=initAutocomplete"
+        async defer></script>
   </body>
 </html>
