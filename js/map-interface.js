@@ -3,9 +3,10 @@ var Map = require('./../js/map.js').mapModule;
 
 
 $( document ).ready(function() {
-  $('#locateEstonia').click(locateUser);
+  $('.maarjaNow').hide();
+  $('#maarjaNow').click(locateUser);
+  $('#maarjaFrom').click(locateEstonia);
 });
-
 
 function locateUser() {
 
@@ -19,17 +20,18 @@ function locateUser() {
   else {
     alert("Your browser doesn't support the Geolocation API");
   }
+  $('.maarjaNow').show();
 }
 
 function geolocationSuccess(position) {
   var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
   var myOptions = {
-    zoom : 16,
+    zoom : 18,
     center : userLatLng,
     mapTypeId : google.maps.MapTypeId.ROADMAP
   };
-  var mapObject = new google.maps.Map(document.getElementById("map"), myOptions);
+  var mapObject = new google.maps.Map(document.getElementById("epicodus"), myOptions);
   new google.maps.Marker({
     map: mapObject,
     position: userLatLng
@@ -38,4 +40,13 @@ function geolocationSuccess(position) {
 
 function geolocationError(positionError) {
   alert(positionError);
+}
+
+function locateEstonia() {
+  var map = new google.maps.Map(document.getElementById('estonia'), {
+    center: {lat: 59.432, lng: 24.721},
+    scrollwheel: false,
+    zoom: 6,
+    MapTypeId: google.maps.MapTypeId.ROADMAP
+  });
 }
