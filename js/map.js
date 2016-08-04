@@ -103,8 +103,8 @@ CustomMap.prototype.initMap = function() {
         var directionsService = new google.maps.DirectionsService();
         var directionsDisplay = new google.maps.DirectionsRenderer();
         var map = new google.maps.Map(document.getElementById('flights'), {
-          zoom: 7,
-          center: {lat: 41.85, lng: -87.65}
+          zoom: 10,
+          center: {lat: 45.52, lng: -122.67}
         });
         directionsDisplay.setMap(map);
 

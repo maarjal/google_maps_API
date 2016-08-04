@@ -1,7 +1,6 @@
 var apiKey = require('./../.env').apiKey;
 var CustomMap = require('./../js/map.js').mapModule;
 
-
 $(document).ready(function() {
   var epicodusMap = new CustomMap();
   $('.maarjaNow').hide();
@@ -16,6 +15,16 @@ $(document).ready(function() {
   $('#maarjaSindi').click(function() {
     map.locateSindi();
   });
+  $('#weatherLocation').click(function() {
+    var city = $('#location').val();
+  console.log(city);
+    $('#location').val("");
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial" + '&appid=' + apiKey).then(function(response) {
+      $('.showWeather').text("The temperature in " + city + " is: " + response.main.temp + " degrees");}).fail(function(error) {
+        $('.showWeather').text(error.responseJSON.message);
+    });
+  });
+
   var bridgesMap = new CustomMap();
   $('#maarjaBridges').click(function() {
     bridgesMap.locateBridges();
