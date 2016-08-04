@@ -3,7 +3,7 @@
   "description": "",
   "main": "gulpfile.js",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/maarjal/google_maps_API",
   "ignore": [
     "**/.*",
     "node_modules",

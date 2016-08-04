@@ -1,7 +1,7 @@
 {
   "name": "google_maps_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "#### _Google Map API Web App, August 4, 2016_",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +23,13 @@
     "gulp-util": "^3.0.7",
     "jshint": "^2.9.2",
     "vinyl-source-stream": "^1.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maarjal/google_maps_API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maarjal/google_maps_API/issues"
+  },
+  "homepage": "https://github.com/maarjal/google_maps_API#readme"
 }
