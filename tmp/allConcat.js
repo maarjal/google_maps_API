@@ -16,11 +16,8 @@ $(document).ready(function() {
   $('#maarjaSindi').click(function() {
     map.locateSindi();
   });
-  // var bridgeMap = new CustomMap();
-  // $('.bridge')submit(function(event) {
-  //   event.preventDefault();
-  //   var bridge = $('#maarjaBridge').val();
-  //   $('#maarjaBridge').val("");
-  //   var location = bridgeMap.getBridge(bridge);
-  // });
+  var bridgesMap = new CustomMap();
+  $('#maarjaBridges').click(function() {
+    bridgesMap.locateBridges();
+  })
 });
