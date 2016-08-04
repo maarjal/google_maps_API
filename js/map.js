@@ -112,11 +112,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, start, e
   });
 }
 
-// flight search
+// bus search
 CustomMap.prototype.initMap = function(start, end) {
   var directionsService = new google.maps.DirectionsService();
   var directionsDisplay = new google.maps.DirectionsRenderer();
-  var map = new google.maps.Map(document.getElementById('flights'), {
+  var map = new google.maps.Map(document.getElementById('bus'), {
     zoom: 10,
     center: {lat: 45.52, lng: -122.67}
   });
@@ -124,6 +124,6 @@ CustomMap.prototype.initMap = function(start, end) {
   // var onChangeHandler = function() {
   calculateAndDisplayRoute(directionsService, directionsDisplay, start, end);
   // };
-}
+};
 
 exports.mapModule = CustomMap;

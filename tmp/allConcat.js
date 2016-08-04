@@ -1,4 +1,5 @@
 var apiKey = require('./../.env').apiKey;
+var yelpKey = require('./../.env').yelpKey;
 var CustomMap = require('./../js/map.js').mapModule;
 
 $(document).ready(function() {
@@ -15,6 +16,7 @@ $(document).ready(function() {
   $('#maarjaSindi').click(function() {
     map.locateSindi();
   });
+
   $('#weatherLocation').click(function() {
     var city = $('#location').val();
   console.log(city);
@@ -25,17 +27,26 @@ $(document).ready(function() {
     });
   });
 
+  // $('#nordicFood').click(function() {
+  //   var food = $('#food').val();
+  //   console.log(food);
+  //   $('#food').val("");
+  //   $.get('https://api.yelp.com/v2/search/?term=' + food + '&location=portland' + yelpKey).then(function(response) {
+  //     $('.showFood').text('Go eat at ' + food);}).fail(function(error) {
+  //       $('.showFood').text(error.responseJSON.message);
+  //   });
+  // });
+
   var bridgesMap = new CustomMap();
   $('#maarjaBridges').click(function() {
     bridgesMap.locateBridges();
   });
+
   $('.travel').submit(function(event) {
     event.preventDefault();
     var travelMap = new CustomMap();
     var start = $('#start').val();
     var end = $('#end').val();
-    // console.log(start);
-    // console.log(end);
     travelMap.initMap(start, end);
   });
 });

@@ -15,6 +15,11 @@ A [link] (http://example.com).
 
 # var apiKey = "AIzaSyAZLgOFfUqwEE5FxLE0LTQDfE3oAAK7SFo";
 
+API v2.0
+Consumer Key	b_Md1t962jgcELHRpwIr-A
+Consumer Secret	w6Cnfa67Ncv-eW_ackfePuA5-9E
+Token	qurDyi84nIVVGVVMfSUz6cvyMlKz8uKu
+Token Secret	KRBtrLDPZ3a0BoP968a0bh_AJuo
 
 _{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
