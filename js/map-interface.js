@@ -34,8 +34,8 @@ $(document).ready(function() {
     var travelMap = new CustomMap();
     var start = $('#start').val();
     var end = $('#end').val();
-    console.log(start);
-    console.log(end);
-    travelMap.initMap();
+    // console.log(start);
+    // console.log(end);
+    travelMap.initMap(start, end);
   });
 });

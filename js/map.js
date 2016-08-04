@@ -98,33 +98,32 @@ function callback(results, status) {
   }
 }
 
+function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
+  directionsService.route({
+    origin: start,
+    destination: end,
+    travelMode: 'TRANSIT'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+
 // flight search
-CustomMap.prototype.initMap = function() {
-        var directionsService = new google.maps.DirectionsService();
-        var directionsDisplay = new google.maps.DirectionsRenderer();
-        var map = new google.maps.Map(document.getElementById('flights'), {
-          zoom: 10,
-          center: {lat: 45.52, lng: -122.67}
-        });
-        directionsDisplay.setMap(map);
-
-        var onChangeHandler = function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
-        };
-      }
-
-      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        directionsService.route({
-          origin: start,
-          destination: end,
-          travelMode: 'DRIVING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
-      }
+CustomMap.prototype.initMap = function(start, end) {
+  var directionsService = new google.maps.DirectionsService();
+  var directionsDisplay = new google.maps.DirectionsRenderer();
+  var map = new google.maps.Map(document.getElementById('flights'), {
+    zoom: 10,
+    center: {lat: 45.52, lng: -122.67}
+  });
+  directionsDisplay.setMap(map);
+  // var onChangeHandler = function() {
+  calculateAndDisplayRoute(directionsService, directionsDisplay, start, end);
+  // };
+}
 
 exports.mapModule = CustomMap;
