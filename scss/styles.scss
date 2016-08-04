@@ -8,7 +8,21 @@ p {
   font-size: 1.5em;
 }
 
-#epicodus, #estonia, #sindi-pano, #map, #bridges {
+#epicodus, #estonia, #sindi-pano, #map, #bridges, #flights {
   height: 500px;
   width: 500px;
 }
+
+#flights {
+  //  height: 100%;
+ }
+ #floating-panel {
+   z-index: 5;
+   background-color: #fff;
+   padding: 5px;
+   border: 1px solid #999;
+   text-align: center;
+   font-family: 'Roboto','sans-serif';
+   line-height: 30px;
+   padding-left: 10px;
+ }

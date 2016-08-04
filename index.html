@@ -43,6 +43,39 @@
           <div id="sindi-pano"></div>
         </div>
         <hr>
+        <div class="row">
+          <div class="page">
+            <div id="floating-panel">
+              <form class="travel">
+                <strong>Start: </strong>
+                <select id="start" onchange="calcRoute();">
+                  <option value="tallinn, estonia">Estonia</option>
+                  <option value="helsinki, finland">Helsinki</option>
+                  <option value="london, uk">London</option>
+                  <option value="seattle, wa">Seattle</option>
+                  <option value="portland, or">Portland</option>
+
+                </select>
+                <strong>End: </strong>
+                <select id="end" onchange="calcRoute();">
+                  <option value="tallinn, estonia">Estonia</option>
+                  <option value="helsinki, finland">Helsinki</option>
+                  <option value="london, uk">London</option>
+                  <option value="seattle, wa">Seattle</option>
+                  <option value="portland, or">Portland</option>
+                </select>
+                <button type="submit" name="button">Submit</button>
+              </form>
+            </div>
+            <div class="maarjaTravel">
+              <p>Maarja took several flights to get from Tallinn, Estonia to Portland, Oregon. Can you find all the routes that she took?</p>
+            </div>
+            <div id="flights"></div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
         <div class="page">
           <button id="maarjaBridges" class="btn btn-success">Where is the Brooklyn Bridge?</button>
           <div class="maarjaBridges">
